@@ -39,7 +39,11 @@
                 [style.margin.px]="imageMargin"
               />
             </td>
-            <td>{{ product.productName | uppercase }}</td>
+            <td>
+              <a [routerLink]="['/products', product.productId]">{{
+                product.productName | uppercase
+              }}</a>
+            </td>
             <td>{{ product.productCode | lowercase | covertToSpaces: "-" }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency: "USD":"$":"1.2-2" }}</td>
